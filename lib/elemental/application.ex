@@ -12,11 +12,8 @@ defmodule Elemental.Application do
       Elemental.Repo,
       {DNSCluster, query: Application.get_env(:elemental, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Elemental.PubSub},
-      # Start the Finch HTTP client for sending emails
       {Finch, name: Elemental.Finch},
-      # Start a worker by calling: Elemental.Worker.start_link(arg)
-      # {Elemental.Worker, arg},
-      # Start to serve requests, typically the last entry
+      Elemental.Games,
       ElementalWeb.Endpoint
     ]
 
